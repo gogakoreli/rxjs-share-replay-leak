@@ -26,12 +26,13 @@ export class PersonComponent implements OnInit, OnDestroy {
         this.person = person;
         console.log(person);
       },
-      complete: () => console.log('completed'),
+      complete: () => console.log('subscription completed'),
     });
   }
 
   ngOnDestroy() {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
+    console.log('person component destroyed')
   }
 }
